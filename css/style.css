@@ -21,17 +21,27 @@ body {
 /* hero */
 .hero-animated {
     position: relative;
-    overflow: hidden
+    overflow: hidden;
+    background-image: url('../assets/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    display: table;
 }
 
 .hero-animated::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(120deg, var(--bg-1), var(--bg-2));
+    background: linear-gradient(324deg, #1a1a1a, #000c28);
     opacity: .9;
     z-index: 0;
     animation: shiftBg 12s ease-in-out infinite
+}
+
+.hero-animated .overlay{
+    display: table-cell;
+    vertical-align: middle;
 }
 
 @keyframes shiftBg {
@@ -72,6 +82,49 @@ body {
     }
 }
 
+.clearfix:before, .clearfix:after {
+    content: " ";
+    display: table;
+}
+.profile-preword {
+    margin-bottom: 10px;
+}
+.profile-preword span {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.1;
+    display: inline-block;
+    padding: 7px 12px;
+    position: relative;
+    background-color: #e8676b;
+    border-radius: 4px;
+}
+.profile-preword span:before {
+    content: '';
+    width: 0;
+    height: 0;
+    top: 100%;
+    left: 5px;
+    display: block;
+    position: absolute;
+    border-style: solid;
+    border-width: 0 0 8px 8px;
+    border-color: transparent;
+    border-left-color: #e8676b;
+}
+.clearfix:after {
+    clear: both;
+}
+.banner-heading {
+    font-weight: 700;
+}
+.banner-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
 .hero-portrait {
     position: relative;
     display: inline-block
@@ -79,18 +132,20 @@ body {
 
 .hero-portrait .film-strip {
     position: absolute;
-    left: -12px;
-    top: -12px;
-    width: calc(100% + 24px);
-    height: calc(100% + 24px);
+    left: -15px;
+    top: -16px;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(2, 6, 23, .6);
     pointer-events: none;
-    background: linear-gradient(90deg, rgba(255, 255, 255, .02), rgba(255, 255, 255, 0));
-    transform: rotate(-2deg)
+    background: linear-gradient(128deg, rgb(0 76 230 / 39%), rgb(7 56 54));
+    transform: rotate(-2deg);
 }
 
 .profile-img {
+    position: relative;
+    z-index: 1;
     max-width: 360px;
     border-radius: 12px
 }
@@ -168,12 +223,6 @@ section {
     color: #fff
 }
 
-/* navbar glass */
-.navbar {
-    backdrop-filter: blur(6px);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01))
-}
-
 /* video modal adjustments */
 .modal-content .ratio {
     border-radius: 12px;
@@ -213,4 +262,12 @@ section {
     .gallery-item {
         height: 120px
     }
+}
+
+.button {
+    background: #e8676b;
+    color: #fff;
+    border-color: transparent;
+    border-radius: 4px;
+    padding: 0px 10px;
 }

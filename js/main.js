@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function(){
       const msg = document.getElementById('message').value.trim();
       const subject = encodeURIComponent('Portfolio contact from '+name);
       const body = encodeURIComponent(msg + '\n\n' + name + '\n' + email);
-      window.location.href = `mailto:you@example.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:Charanchandrakumar6@gmail.com?subject=${subject}&body=${body}`;
     })
   }
 });
