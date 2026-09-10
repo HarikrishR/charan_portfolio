@@ -13,7 +13,9 @@ html {
 body {
     font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     background: #04060a;
-    color: #e6eef8
+    color: #e6eef8;
+    font-size: .915rem;
+    line-height: 1.75;
 }
 
 /* hero */
