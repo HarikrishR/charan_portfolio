@@ -18,6 +18,21 @@ body {
     line-height: 1.75;
 }
 
+h1, h2 {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+h1::after, h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2))
+}
+
 /* hero */
 .hero-animated {
     position: relative;
@@ -198,6 +213,12 @@ h1 {
     filter: brightness(.95)
 }
 
+/* youtube overlay */
+.youtube-link{position:relative;display:block}
+.youtube-overlay{position:absolute;left:50%;top:36%;transform:translate(-50%,-50%);z-index:5;pointer-events:none;opacity:.95;transition:transform .18s ease,opacity .18s}
+.youtube-link:hover .youtube-overlay{transform:translate(-50%,-50%) scale(1.08);opacity:1}
+
+
 section {
     padding-top: 60px;
     padding-bottom: 60px
@@ -270,4 +291,32 @@ section {
     border-color: transparent;
     border-radius: 4px;
     padding: 0px 10px;
+}
+
+.socal-icons-div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bio-highlights {
+    padding-left: 0;
+}
+.bio-highlights li {
+    list-style-type: none;
+    padding-left: 20px;
+    position: relative;
+}
+
+.bio-highlights li::before {
+    content: "";
+    position: absolute;
+    background: url(../assets/images/arrow.png) no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    color: #e8676b;
+    width: 14px;
+    height: 14px;
+    top: 7px;
 }
